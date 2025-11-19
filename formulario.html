@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro CRUD </title>
+  <link rel="stylesheet" href="assets/scripts/styles.css">
+</head>
+<body class="bg-light">
+
+  <main class="container d-flex justify-content-center align-items-center min-vh-100">
+    <section class="card p-3 w-75 shadow-lg">
+      <h1 class="text-center mb-3 fs-3">Registro CRUD</h1>
+      <hr>
+
+      <div class="text-end mb-2">
+        <button id="btn-nuevo" class="btn btn-primary btn-sm">💗 Nueva Persona</button>
+      </div>
+
+      <table class="table table-striped table-bordered text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Sexo</th>
+            <th>Fecha De Nacimiento</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-personas"></tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <dialog id="dlg-persona" class="p-3 rounded">
+    <form id="form-persona" method="dialog">
+      <h3 id="dlg-title">Agregar Persona</h3>
+      <input type="hidden" id="id_persona">
+
+      <label>Nombre</label>
+      <input id="A1" type="text" required class="form-control">
+
+      <label>Apellido</label>
+      <input id="A2" type="text" required class="form-control">
+
+      <label>Sexo</label>
+      <select id="sexo" required class="form-select">
+        <option value="H">Hombre</option>
+        <option value="M">Mujer</option>
+        <option value="O">Otro</option>
+      </select>
+
+      <label>Fecha Nacimiento</label>
+      <input id="fecha" type="date" required class="form-control">
+
+      <label>Rol</label>
+      <select id="id_rol" required class="form-select">
+        <option value="1">Alumno</option>
+        <option value="2">Profesor</option>
+        <option value="3">Administrador</option>
+        <option value="4">Otro</option>
+      </select>
+
+      <div class="d-flex justify-content-end mt-3 gap-2">
+        <button id="btn-save" class="btn btn-success btn-sm">Guardar</button>
+        <button id="btn-cancel" class="btn btn-secondary btn-sm" type="button">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+ 
+  <dialog id="dlg-confirm" class="p-3 rounded">
+    <p>¿Deseas eliminar esta persona?</p>
+    <div class="d-flex justify-content-end gap-2">
+      <button id="btn-ok" class="btn btn-danger btn-sm">Sí, eliminar</button>
+      <button id="btn-no" class="btn btn-secondary btn-sm">Cancelar</button>
+    </div>
+  </dialog>
+
+  <script src="assets/scripts/registro.js"></script>
+</body>
+</html>
